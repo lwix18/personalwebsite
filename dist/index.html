@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lynrick's Personal Website</title>
+    <link rel="icon" href="images/icon_concepts.png" type="image/x-icon">
     <link rel="stylesheet" href="output.css">
     <style>
         /* Hide checkboxes */
@@ -18,7 +19,7 @@
         }
 
         /* Style for the labels acting as the accordion triggers */
-        input[type="checkbox"] + label {
+        .accordion-header {
             cursor: pointer;
             padding: 10px;
             display: block;
@@ -35,15 +36,14 @@
             border-top: none;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            max-height: 0;
+            max-height: 2500px;
+        }
+        .accordion-content.active {
+            max-height: 2500px; /* Adjust the value based on your content */
         }
         /* Display content when checkbox is checked */
-        input[type="checkbox"]:checked ~ .accordion-content {
-            display: block;
-            max-height: 2500px; /* Adjust to a large enough value */
-            transition: max-height 0.3s ease;
-        }
-        /* Container for the collage */
+
+         /* Container for the collage */
         .collage-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
@@ -96,7 +96,14 @@
         strong {
             font-weight: bold; /* This is the default, but you can customize it if needed */
             color: #000000;   /* Set the text color to blue, you can change it as per your preference */
-        }   
+        }  
+        .accordion-header.active::after {
+            content: '\2212'; /* Unicode character for minus sign */
+        }
+
+        .accordion-header::after {
+            content: '\002B'; /* Unicode character for plus sign */
+        }
     </style>
 </head>
 <body>
@@ -114,6 +121,21 @@
           <h1 class= "ml-64 font-serif italic text-3xl text-left"> Vinyl & CD collector and concert enthousiast</h1>
         </div>
     </div>
+    <script>
+        function toggleAccordion(contentId) {
+            var content = document.getElementById(contentId);
+            
+            
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            content.classList.toggle('active');
+
+            var header = content.previousElementSibling;
+            header.classList.toggle('active');
+
+            var icon = header.querySelector('.accordion-header::after');
+        }
+    </script>
+    <div class="pb-64 ..."></div>
 
     <div class="pt-20 ..."></div>
     <p class= "ml-40 mr-40 font-medium font-serif text-lg text-center"> Young Aruban engineer who specializes in battery system design, system/cell test and system application. I truly believe that in order to achieve a more sustainable future by means of renewable energy integration, batteries are at the forefront to achieve this whether it be in the mobility or in the energy sector.
@@ -134,9 +156,8 @@
     </div>
     <div class="pt-10 ..."></div>
     <div class="accordion-section">
-        <input type="checkbox" id="section1">
-        <label for="section1" class="text-center font-serif font-medium text-3xl">Experiences</label>
-        <div class="accordion-content">
+        <label class="accordion-header text-center font-serif font-medium text-3xl"onclick="toggleAccordion('accordion-content-1')">Experiences </label>
+        <div id="accordion-content-1" class="accordion-content">
             <div class="pt-10"></div>
             <div class="container">
                 <div class="image">
@@ -201,9 +222,8 @@
         </div>
     </div>
     <div class="accordion-section">
-        <input type="checkbox" id="section2">
-        <label for="section2" class="text-center font-serif font-medium text-3xl">Projects</label>
-        <div class="accordion-content">
+        <label class=" accordion-header text-center font-serif font-medium text-3xl"onclick="toggleAccordion('accordion-content-2')">Projects </label>
+        <div id="accordion-content-2" class="accordion-content">
             <div class="pt-10"></div>
             <div class="container">
                 <div class="image">
@@ -243,9 +263,8 @@
         </div>
     </div>
     <div class="accordion-section">
-        <input type="checkbox" id="section3">
-        <label for="section3" class="text-center font-serif font-medium text-3xl">Education</label>
-        <div class="accordion-content">
+        <label class="accordion-header text-center font-serif font-medium text-3xl"onclick="toggleAccordion('accordion-content-3')">Education </label>
+        <div id="accordion-content-3" class="accordion-content">
             <div class="pt-10"></div>
             <div class="container">
                 <div class="image">
@@ -295,9 +314,8 @@
         </div>
     </div>
     <div class="accordion-section">
-        <input type="checkbox" id="section4">
-        <label for="section4" class="text-center font-serif font-medium text-3xl">Hobbies</label>
-        <div class="accordion-content">
+        <label class="accordion-header text-center font-serif font-medium text-3xl" onclick="toggleAccordion('accordion-content-4')">Hobbies </label>
+        <div id="accordion-content-4" class="accordion-content">
             <p class= "ml-40 mr-40 font-medium font-serif text-1xl text-center"> My hobbies are primarily collecting vinyls or CD's, listening to them on my CD or record player and going to the concerts of my favorite artists.
                 I also enjoy going to the gym a lot and thus I go to the gym routinely as a means of consistently challenging myself physically.
                 Lastly, I learning how to travel around the city with my longboard and currently I am trying to better my Spanish aswell.  </p>
