@@ -7,118 +7,135 @@
     <link rel="icon" href="images/icon_concepts.png" type="image/x-icon">
     <link rel="stylesheet" href="output.css">
     <style>
-        /* Hide checkboxes */
         input[type="checkbox"] {
             display: none;
+        }
+        .container {
+            flex-wrap: wrap;
+            flex-direction: column;
+            margin-bottom: 120px;
         }
 
         /* Style for the accordion sections */
         .accordion-section {
-            margin-bottom: 100px;
+            margin-bottom: 20px;
             border: 0px solid #000000;
         }
 
         /* Style for the labels acting as the accordion triggers */
         .accordion-header {
             cursor: pointer;
-            padding: 10px;
+            padding: 6px;
             display: block;
             background-color: #F0E7D6;
             color: #000000;
             border: 1px solid #000000;
+            width: 100%;
+            height: 50px;
+            align-items: center;
+            text-align: center;
+            margin: 0;
+            margin-bottom: 40px;
         }
 
         /* Hide content by default */
         .accordion-content {
             display: none;
-            padding: 10px;
+            padding: 15px;
             border: 0px solid #3498db;
             border-top: none;
             overflow: hidden;
             transition: max-height 0.3s ease;
-            max-height: 2500px;
+            max-height: 3600px;
         }
         .accordion-content.active {
-            max-height: 2500px; /* Adjust the value based on your content */
+            max-height: 3600px; 
         }
-        /* Display content when checkbox is checked */
 
-         /* Container for the collage */
+         
         .collage-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
-            gap: 10px; /* Adjust the gap between images */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
         }
         .button, .button-link {
             background-color: #F0E7D6;
             border: 1px solid #000000;
             color: #000000;
-            padding: 15px 20px;
+            padding: 12px 16px;
             text-align: center;
             text-decoration: none;
             display: flexbox;
-            font-size: 18px;
-            margin: 4px 8px;
+            font-size: 16px;
+            margin: 10px;
             cursor: pointer;
         }   
         .download-container, .button-container {
-            display: flex;
-             justify-content: space-between;
+            display: flex-box;
             text-align: center;
-            margin-top: 0px; /* Optional: Add some space at the top */
+            margin-top: 0px;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px 16px;
         }
         .link {
             color: #000000;
             text-align: center;
             display: flexbox;
-            font-size: 18px;
+            font-size: 16px;
             margin: 4px 8px;
             cursor: pointer;
+            padding: 12px 16px;
         }   
         .link-container {
             display: flex;
              justify-content: space-between;
             text-align: center;
-            margin-top: 0px; /* Optional: Add some space at the top */
+            margin-top: 0px;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Style for individual images */
         .collage-container img {
             width: 100%;
             height: auto;
-            border-radius: 8px; /* Optional: Add rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
-                    /* Style for the hyperlink */
+            border-radius: 0;
+            box-shadow: none; 
         }
-        a { /* Remove underline (optional) */
-            color: #000000; /* Set the text color */
+        a {
+            color: #000000; 
         }
         strong {
-            font-weight: bold; /* This is the default, but you can customize it if needed */
-            color: #000000;   /* Set the text color to blue, you can change it as per your preference */
+            font-weight: bold;
+            font-size: 18px;
+            color: #000000;  
         }  
+        body {
+            font-size: 16px;
+        }
         .accordion-header.active::after {
-            content: '\2212'; /* Unicode character for minus sign */
+            content: '\2212';
         }
 
         .accordion-header::after {
-            content: '\002B'; /* Unicode character for plus sign */
+            content: '\002B';
         }
     </style>
 </head>
 <body>
     <div class="pt-10 ..."></div>
     <body class="bg-[#F1EDE7] bg-opacity-100"></body>
-    <div class="container">
+    <div class="container" style="margin-bottom: 10px">
         <div class="image">
-          <img width= 400 src="images/IMG_6764.JPG" class="img-fluid mr-20 rounded-lg" align="right" alt="Me">
+          <img width= 400px src="images/IMG_6764.JPG" class="img-fluid mr-24 rounded-lg" align="right" alt="Me">
         </div>
-        <div class="text">
-        <div class="pt-20 ..."></div>
-          <h1 class= "ml-64 font-semibold font-serif text-5xl text-left"> Lynrick Wix, MSc</h1>
-          <div class="pt-5 ..."></div>
-          <h1 class= "ml-64 font-serif italic text-3xl text-left"> Electrical and battery engineer</h1>
-          <h1 class= "ml-64 font-serif italic text-3xl text-left"> Vinyl & CD collector and concert enthousiast</h1>
+        <div class="pt-20 ...">
+          <h1 class= "ml-24 mr-24 font-semibold font-serif text-5xl"> Lynrick Wix, MSc</h1>
+          <div class="pt-5 ...">
+            <h1 class= "ml-24 mr-24 font-serif italic text-3xl"> Electrical and battery engineer</h1>
+            <h1 class= "ml-24 mr-24 font-serif italic text-3xl"> Vinyl & CD collector and concert enthousiast</h1>
+          </div>
         </div>
     </div>
     <script>
@@ -135,129 +152,142 @@
             var icon = header.querySelector('.accordion-header::after');
         }
     </script>
-    <div class="pb-64 ..."></div>
 
-    <div class="pt-20 ..."></div>
-    <p class= "ml-40 mr-40 font-medium font-serif text-lg text-center"> Young Aruban engineer who specializes in battery system design, system/cell test and system application. I truly believe that in order to achieve a more sustainable future by means of renewable energy integration, batteries are at the forefront to achieve this whether it be in the mobility or in the energy sector.
-        I have in the past contributed to this at companies such as <strong>Tesla, Lightyear and Stedin</strong> and I have a desire to continue to contribute to this cause in the future aswell. 
-    </p>
-    <div class="pt-5 ..."></div>
-    <p class= "ml-40 mr-40 font-medium font-serif text-lg text-center"> I come from a small island in the Caribbean called Aruba. In 2016, I moved from Aruba to the Netherlands to follow my dreams and pursue a degree in Electrical Engineering.
-        I am keen collector of vinyls & CD's and I also enjoy going to concerts of my favorite artists in my free time.
-    </p>
-    <div class="pt-10 ..."></div>
-    <div class="button-container">
-        <div class="download-container text-xl ml-40 pl-64">  
-          <a href="images/Lynrick_Wix_CV.pdf" download="Lynrick_Wix_CV.pdf" class="button" target="_blank">Download CV/Resume</a>
-        </div>
-        <div class="download-container text-xl mr-40 pr-64">  
-          <a href="https://www.linkedin.com/in/lynrick-wix/" class="button" target="_blank">Visit Linkedin page</a>
-        </div>
+    <div class="pt-20 ...">
+        <p class= "font-medium font-serif text-lg text-center"> Young Aruban engineer who specializes in battery system design, system/cell test and system application. I truly believe that in order to achieve a more sustainable future by means of renewable energy integration, batteries are at the forefront to achieve this whether it be in the mobility or in the energy sector.
+            I have in the past contributed to this at companies such as <strong>Tesla, Lightyear and Stedin</strong> and I have a desire to continue to contribute to this cause in the future aswell. 
+        </p>
     </div>
+    <div class="pt-5 ...">
+        <p class= "font-medium font-serif text-lg text-center"> I come from a small island in the Caribbean called Aruba. In 2016, I moved from Aruba to the Netherlands to follow my dreams and pursue a degree in Electrical Engineering.
+            I am keen collector of vinyls & CD's and I also enjoy going to concerts of my favorite artists in my free time.
+        </p>
+    </div>
+    <div class="pt-10 ...">
+        <div class="button-container">
+            <div class="download-container text-xl">  
+            <a href="images/Lynrick_Wix_CV.pdf" download="Lynrick_Wix_CV.pdf" class="button" target="_blank">Download CV/Resume</a>
+            </div>
+        </div>
+    </div>  
+    <div class="pt-10...">
+        <div class="button-container" align = center>
+            <div class="download-container text-xl">  
+            <a href="https://www.linkedin.com/in/lynrick-wix/" class="button" target="_blank">Visit Linkedin page</a>
+            </div>
+        </div>
+    </div> 
     <div class="pt-10 ..."></div>
-    <div class="accordion-section">
-        <label class="accordion-header text-center font-serif font-medium text-3xl"onclick="toggleAccordion('accordion-content-1')">Experiences </label>
-        <div id="accordion-content-1" class="accordion-content">
-            <div class="pt-10"></div>
-            <div class="container">
-                <div class="image">
-                    <img width= 400 src="images/tesla.jpg" class="img-fluid ml-24 rounded-lg" align="right" alt="Me">
-                </div>
-                <div class="text">
-                    <h1 class= "ml-24 font-serif font-medium text-3xl text-left"> Tesla - &#40 2021 - 2022 &#41</h1>
-                    <p class= "ml-24 font-serif italic text-2xl text-left"> Amsterdam, the Netherlands</p>
-                    <div class="pt-3 ..."></div>
-                    <p class= "ml-24 font-serif font-medium text-1xl text-left"> Had the amazing opportunity to work in the Tesla project engineering team for deployment of Tesla's energy products (Megapack and Powerpack) all over Europe, Africa and Middle East.
-                    Key contributions to the team and company :
-                    </p>
-                    <div class="pt-5 ..."></div>
-                    <p class= "ml-24 font-serif font-medium text-1xl text-left">1. I provided multiple site layouts and single line diagrams for tender projects for different clients and commissioned a battery storage site for a client.
-                    </p>
-                    <p class= "ml-24 font-serif font-medium text-1xl text-left">2. Made testplans and performed tests on several energy storage sites (Holes Bay and Contego BESS) and test benches in order to comply
-                        with G99 grid code requirements and frequency regulation market requirements. Then a documentation was made to keep track for other future BESS sites which tests needs to be performed and how the tests needs to be performed.
-                    </p>
-                </div>
-            </div>
-            <div class="pb-32"></div>
-            <div class="container">
-                <div class="image">
-                    <img width= 400 height= 500 src="images/lightyear.jpg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
-                </div>
-                <div class="text">
-                    <h1 class= "ml-24 font-serif font-medium text-3xl text-left"> Lightyear - &#40 2021 &#41</h1>
-                    <p class= "ml-24 font-serif italic text-2xl text-left"> Helmond, the Netherlands</p>
-                    <div class="pt-3 ..."></div>
-                    <p class= "ml-24 font-serif font-medium text-1xl text-left"> Lightyear is an electric vehicle startup to commercialize the first solar electric vehicle built in in-house in the Netherlands.
-                        I was part of the electrical engineering department with the specialization within the battery department.
-                        Key contributions to the team and company :
-                    </p>
-                    <div class="pt-5 ..."></div>
-                    <p class= "ml-24 font-serif font-medium text-1xl text-left">1. Built the battery cell test setup from the ground up and developed a Matlab graphical user interface in such a way to reduce the amount of manual steps from the start of the test to extraction of valuable data from the tested battery cell.
-                        Furthermore, multiple characterization tests and scripts were set up by myself for any engineer or technician to make use of for years to come.
-                    </p>
-                    <p class= "ml-24 font-serif font-medium text-1xl text-left">2. Developed an algorithm for calculating the internal resistances and capacitance of battery cells (RRC model) using DCR pulses instead of the costly EIS measurements. Error of the simulated voltage response versus measurements was max 1.15%.
-                    </p>
-                </div>
-            </div>
-            <div class="pb-24"></div>
-            <div class="container">
-                <div class="image">
-                    <img width= 400 src="images/linkedin_1.jpg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
-                </div>
-                <div class="text">
-                    <p class= "ml-24 font-serif font-medium text-3xl text-left"> Delft Hyperloop - &#40 2019 - 2020 &#41</p>
-                    <p class= "ml-24 font-serif italic text-2xl text-left"> Delft, the Netherlands</p>
-                    <div class="pt-3 ..."></div>
-                    <p class= "ml-24 font-serif font-medium text-1xl text-left">Delft Hyperloop is a team of engineers who design and build a hyperloop pod to compete at the annual SpaceX Hyperloop Pod competition. Our main accomplishment was reaching a top speed of 360 km/h in a 300 meter open air test track.
-                        My responsibilities in the Powertrain department was to coordinate and document every tests within the department and the implementation of the battery management system for the battery pack. Key contributions to the team :
-                    </p>
-                    <div class="pt-5 ..."></div>
-                    <p class= "ml-24 font-serif font-medium text-1xl text-left">1. Coordinated and co-built an 800A load test setup to verify manufacturer datasheet claims. This ensured that a lightweight battery pack was
-                        produced, which resulted in a battery pack weight reduction of 40% compared to the previous team.
-                    </p>
-                    <p class= "ml-24 font-serif font-medium text-1xl text-left">2. Co-produced the wiring warness and co-automated a flywheel setup with multiple measurement devices.
-                    </p>
-                </div>
+        <div class="accordion-section">
+            <label class="accordion-header font-serif font-medium text-3xl text-center" onclick="toggleAccordion('accordion-content-1')">Experiences </label>
+            <div id="accordion-content-1" class="accordion-content">
+<!--                     <div class="pb-32"> -->
+                    <div class="container" style="margin-bottom: 90px">
+                        <div class="image">
+                            <img width= 500px src="images/tesla.jpg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
+                        </div>
+                        <h1 class= "font-serif font-medium text-3xl"> Tesla - &#40 2021 - 2022 &#41</h1>
+                        <p class= "font-serif italic text-2xl"> Amsterdam, the Netherlands</p>
+                        <div class="pt-3 ...">
+                            <p class= "font-serif font-medium text-1xl"> Had the amazing opportunity to work in the Tesla project engineering team for deployment of Tesla's energy products (Megapack and Powerpack) all over Europe, Africa and Middle East.
+                            Key contributions to the team and company :
+                            </p>
+                        </div>
+                        <div class="pt-5 ...">
+                            <p class= "font-serif font-medium text-1xl">1. I provided multiple site layouts and single line diagrams for tender projects for different clients and commissioned a battery storage site for a client.
+                            </p>
+                            <p class= "font-serif font-medium text-1xl">2. Made testplans and performed tests on several energy storage sites (Holes Bay and Contego BESS) and test benches in order to comply
+                                with G99 grid code requirements and frequency regulation market requirements. Then a documentation was made to keep track for other future BESS sites which tests needs to be performed and how the tests needs to be performed.
+                            </p>
+                        </div>
+                    </div>
+<!--                     </div> -->
+<!--                     <div class="pb-32"> -->
+                    <div class="container" style="margin-bottom: 50px">
+                        <div class="container" >
+                        <div class="image">
+                            <img width= 500px src="images/lightyear.jpg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
+                        </div>
+                        <h1 class= "font-serif font-medium text-3xl text-left"> Lightyear - &#40 2021 &#41</h1>
+                        <p class= "font-serif italic text-2xl text-left"> Helmond, the Netherlands</p>
+                        <div class="pt-3 ...">
+                            <p class= "font-serif font-medium text-1xl text-left"> Lightyear is an electric vehicle startup to commercialize the first solar electric vehicle built in in-house in the Netherlands.
+                                I was part of the electrical engineering department with the specialization within the battery department.
+                                Key contributions to the team and company :
+                            </p>
+                        </div>
+                        <div class="pt-5 ...">
+                            <p class= "font-serif font-medium text-1xl text-left">1. Built the battery cell test setup from the ground up and developed a Matlab graphical user interface in such a way to reduce the amount of manual steps from the start of the test to extraction of valuable data from the tested battery cell.
+                                Furthermore, multiple characterization tests and scripts were set up by myself for any engineer or technician to make use of for years to come.
+                            </p>
+                            <p class= "font-serif font-medium text-1xl text-left">2. Developed an algorithm for calculating the internal resistances and capacitance of battery cells (RRC model) using DCR pulses instead of the costly EIS measurements. Error of the simulated voltage response versus measurements was max 1.15%.
+                            </p>
+                        </div>
+                    </div>
+<!--                     </div> -->
+                    <div class="container" style="margin-bottom: 20px">
+                        <div class="image">
+                            <img width= 500px src="images/linkedin_1.jpg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
+                        </div>
+                        <p class= "font-serif font-medium text-3xl text-left"> Delft Hyperloop - &#40 2019 - 2020 &#41</p>
+                        <p class= "font-serif italic text-2xl text-left"> Delft, the Netherlands</p>
+                        <div class="pt-3 ...">
+                            <p class= "font-serif font-medium text-1xl text-left">Delft Hyperloop is a team of engineers who design and build a hyperloop pod to compete at the annual SpaceX Hyperloop Pod competition. Our main accomplishment was reaching a top speed of 360 km/h in a 300 meter open air test track.
+                                My responsibilities in the Powertrain department was to coordinate and document every tests within the department and the implementation of the battery management system for the battery pack. Key contributions to the team :
+                            </p>
+                        </div>
+                        <div class="pt-5 ...">
+                            <p class= "font-serif font-medium text-1xl text-left">1. Coordinated and co-built an 800A load test setup to verify manufacturer datasheet claims. This ensured that a lightweight battery pack was
+                                produced, which resulted in a battery pack weight reduction of 40% compared to the previous team.
+                            </p>
+                            <p class= "font-serif font-medium text-1xl text-left">2. Co-produced the wiring warness and co-automated a flywheel setup with multiple measurement devices.
+                            </p>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
     <div class="accordion-section">
         <label class=" accordion-header text-center font-serif font-medium text-3xl"onclick="toggleAccordion('accordion-content-2')">Projects </label>
         <div id="accordion-content-2" class="accordion-content">
-            <div class="pt-10"></div>
-            <div class="container">
-                <div class="image">
-                    <img width= 400 src="images/stedin.jpg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
-                </div>
-                <div class="text">
-                    <h1 class= "ml-24 font-serif font-medium text-3xl text-left"> Stedin - &#40 2023 &#41</h1>
-                    <p class= "ml-24 font-serif italic text-2xl text-left"> Rotterdam, the Netherlands</p>
-                    <div class="pt-3 ..."></div>
-                    <p class= "ml-24 font-serif font-medium text-1xl text-left"> Stedin is the distribution system operator for different regions in 
-                        the Netherlands, which includes major cities such as Rotterdam, the Hague and Utrecht.</p>
-                    <div class="pt-3 ..."></div>
-                    <p class= "ml-24 font-serif font-medium text-1xl text-left"> Investigated the application of supercapacitors or batteries at a residential level to reduce voltage fluctuations caused cloud passing over PV
-                        panels. Successfully commissioned two test setups (Grid connected PV system + BESS) of which one I had installed all of the BESS devices
-                        by myself. Finally, I made a graphical user interface in Matlab for both test setups which reads and writes messages to all of the devices in
-                        the test setup and builds up a data file to be exported after the test for post processing. Results showed that the designed control algorithm
-                        minimized the energy usage from the BESS by only consuming around 28Wh.</p>
-                </div>
+<!--             <div class="pb-32"> -->
+                <div class="container">
+                    <div class="image">
+                        <img width= 500px src="images/stedin.jpg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
+                    </div>
+                    <div class="text">
+                        <h1 class= "font-serif font-medium text-3xl text-left"> Stedin - &#40 2023 &#41</h1>
+                        <p class= "font-serif italic text-2xl text-left"> Rotterdam, the Netherlands</p>
+                        <div class="pt-3 ...">
+                            <p class= "font-serif font-medium text-1xl text-left"> Stedin is the distribution system operator for different regions in 
+                                the Netherlands, which includes major cities such as Rotterdam, the Hague and Utrecht.</p>
+                        </div>
+                        <div class="pt-3 ...">
+                            <p class= "font-serif font-medium text-1xl text-left"> Investigated the application of supercapacitors or batteries at a residential level to reduce voltage fluctuations caused cloud passing over PV
+                                panels. Successfully commissioned two test setups (Grid connected PV system + BESS) of which one I had installed all of the BESS devices
+                                by myself. Finally, I made a graphical user interface in Matlab for both test setups which reads and writes messages to all of the devices in
+                                the test setup and builds up a data file to be exported after the test for post processing. Results showed that the designed control algorithm
+                                minimized the energy usage from the BESS by only consuming around 28Wh.</p>
+                        </div>
+                    </div>
+<!--                 </div> -->
             </div>
-            <div class="pb-32"></div>
-            <div class="container">
+            <div class="container" style="margin-bottom: 20px">
                 <div class="image">
-                    <img width= 400 src="images/ehw.jpeg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
+                    <img width= 500px src="images/ehw.jpeg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
                 </div>
                 <div class="text">
-                    <h1 class= "ml-24 font-serif font-medium text-3xl text-left"> European Hyperloop Week - &#40 2021 - 2022 &#41</h1>
-                    <p class= "ml-24 font-serif italic text-2xl text-left"> Delft, the Netherlands/Valencia, Spain</p>
-                    <div class="pt-3 ..."></div>
-                    <p class= "ml-24 font-serif font-medium text-1xl text-left"> The European Hyperloop Week is an annual international event dedicated to the transport of the future, the Hyperloop. This event enables university students, 
+                    <h1 class= "font-serif font-medium text-3xl"> European Hyperloop Week - &#40 2021 - 2022 &#41</h1>
+                    <p class= "font-serif italic text-2xl"> Delft, the Netherlands/Valencia, Spain</p>
+                    <div class="pt-3 ...">
+                    <p class= "font-serif font-medium text-1xl text-left"> The European Hyperloop Week is an annual international event dedicated to the transport of the future, the Hyperloop. This event enables university students, 
                         guest speakers, companies and hyperloop enthusiasts to discuss the technology, feasibility and scalability of the Hyperloop.</p>
-                    <div class="pt-3 ..."></div>
-                    <p class= "ml-24 font-serif font-medium text-1xl text-left"> I was part of a team of skilled technical jurors for the annual European Hyperloop Week competition. One of my first responsibilities is to assess the design
-                         and test documentations of multiple hyperloop teams from around the world to give a go or no go for demonstrating at the public event. Furthermore, I had to assess multiple teams during their presentations of their design
-                         for which I mainly focused on the electrical subsystem, traction/propulsion subsystem and full pod awards. Lastly, I also scrutineered multiple teams' pods to ensure safe operation of their pod at the public event.</p>
+                    </div>
+                        <div class="pt-3 ...">
+                    <p class= "font-serif font-medium text-1xl text-left"> I was part of a team of skilled technical jurors for the annual European Hyperloop Week competition. One of my first responsibilities is to assess the design
+                        and test documentations of multiple hyperloop teams from around the world to give a go or no go for demonstrating at the public event. Furthermore, I had to assess multiple teams during their presentations of their design
+                        for which I mainly focused on the electrical subsystem, traction/propulsion subsystem and full pod awards. Lastly, I also scrutineered multiple teams' pods to ensure safe operation of their pod at the public event.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -265,90 +295,98 @@
     <div class="accordion-section">
         <label class="accordion-header text-center font-serif font-medium text-3xl"onclick="toggleAccordion('accordion-content-3')">Education </label>
         <div id="accordion-content-3" class="accordion-content">
-            <div class="pt-10"></div>
-            <div class="container">
-                <div class="image">
-                    <img width= 400 src="images/msc_graduation.jpeg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
-                </div>
-                <div class="text">
-                    <h1 class= "ml-40 font-serif font-medium text-3xl text-left"> Master in Electrical Engineering</h1>
-                    <h1 class= "ml-40 font-serif italic text-2xl text-left"> Delft University of Technology - Delft, the Netherlands</h1>
-                    <h1 class= "ml-40 font-serif italic text-xl text-left"> GPA : 7.9/10 and final thesis grade : 8.5/10</h1>
-                    <div class="pt-3"></div>
-                    <p class= "ml-40 font-serif font-medium text-1xl text-left"> Choose to follow the track Electrical Power Engineering and specialized in the Power Electronics and Electrical Power System
-                        My electives focused on PV systems, Battery energy storage and optimization. My thesis was done in collaboration with Stedin regarding the use of a battery energy storage to compensate for power fluctuations from solar panels caused by clouds.
-                        This in order to mitigate any voltage fluctuations from occurring at household low-voltage level.
-                        As of right now, the research from my thesis is planned to be published in a journal article.
-                    </p>
-                </div>
-            </div>
-            <div class="pt-32"></div>
-            <div class="container">
-                <div class="image">
-                    <img width= 400 src="images/bsc_graduation.jpg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
-                </div>
-                <div class="text">
-                    <h1 class= "ml-40 font-serif font-medium text-3xl text-left"> Bachelor in Electrical Engineering </h1>
-                    <p class= "ml-40 font-serif italic text-2xl text-left"> Delft University of Technology - Delft, the Netherlands</p>
-                    <h1 class= "ml-40 font-serif italic text-xl text-left"> GPA : 7.8/10 and final thesis grade : 9/10</h1>
-                    <div class="pt-3"></div>
-                    <p class= "ml-40 font-serif font-medium text-1xl text-left"> Followed the bachelor program and finished the program within 3 years with a minor in Spaceflight at the Faculty of Aerospace Engineering at Delft University of Technology. My thesis was done in collaboration with LOBSTER regarding the design for the transmission stage of a deep sea LIDAR system.
-                        Our work for the final thesis was also awarded with the IEEE best high tech start-up business plan.
-                    </p>
-                </div>
-            </div>
-            <div class="pt-32"></div>
-            <div class="container">
-                <div class="image">
-                    <img width= 400 src="images/vwo_graduation.jpeg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
-                </div>
-                <div class="text">
-                    <h1 class= "ml-40 font-serif font-medium text-3xl text-left"> VWO diploma</h1>
-                    <p class= "ml-40 font-serif italic text-2xl text-left"> Colegio Arubano - Oranjestad, Aruba</p>
-                    <div class="pt-3"></div>
-                    <p class= "ml-40 font-serif font-medium text-1xl text-left"> Attained my high school diploma back in my home country of Aruba. These are following courses I choose to follow during the latter half of my high school period :
-                        Dutch, English, Mathematics B, Mathematics D, Physics, Chemistry and Biology.
-                    </p>
-                </div>
-            </div>
+<!--                 <div class="pb-32"> -->
+                    <div class="container" style="margin-bottom: 150px">
+                        <div class="image">
+                            <img width= 500px src="images/msc_graduation.jpeg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
+                        </div>
+                        <div class="text">
+                            <h1 class= "font-serif font-medium text-3xl text-left"> Master in Electrical Engineering</h1>
+                            <h1 class= "font-serif italic text-2xl text-left"> Delft University of Technology - Delft, the Netherlands</h1>
+                            <h1 class= "font-serif italic text-xl text-left"> GPA : 7.9/10 and final thesis grade : 8.5/10</h1>
+                            <div class="pt-3">
+                                <p class= "font-serif font-medium text-1xl text-left"> Choose to follow the track Electrical Power Engineering and specialized in the Power Electronics and Electrical Power System
+                                    My electives focused on PV systems, Battery energy storage and optimization. My thesis was done in collaboration with Stedin regarding the use of a battery energy storage to compensate for power fluctuations from solar panels caused by clouds.
+                                    This in order to mitigate any voltage fluctuations from occurring at household low-voltage level.
+                                    As of right now, the research from my thesis is planned to be published in a journal article.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+<!--                 </div> -->
+<!--                 <div class="pb-64"> -->
+                    <div class="container"style="margin-bottom: 200px">
+                        <div class="image">
+                            <img width= 500px src="images/bsc_graduation.jpg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
+                        </div>
+                        <div class="text">
+                            <h1 class= "font-serif font-medium text-3xl text-left"> Bachelor in Electrical Engineering </h1>
+                            <p class= "font-serif italic text-2xl text-left"> Delft University of Technology - Delft, the Netherlands</p>
+                            <h1 class= "font-serif italic text-xl text-left"> GPA : 7.8/10 and final thesis grade : 9/10</h1>
+                            <div class="pt-3">
+                                <p class= "font-serif font-medium text-1xl text-left"> Followed the bachelor program and finished the program within 3 years with a minor in Spaceflight at the Faculty of Aerospace Engineering at Delft University of Technology. My thesis was done in collaboration with LOBSTER regarding the design for the transmission stage of a deep sea LIDAR system.
+                                    Our work for the final thesis was also awarded with the IEEE best high tech start-up business plan.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+<!--                 </div> -->
+                    <div class="container">
+                        <div class="image">
+                            <img width= 500px src="images/vwo_graduation.jpeg" class="img-fluid ml-40 rounded-lg" align="right" alt="Me">
+                        </div>
+                        <div class="text">
+                            <h1 class= "font-serif font-medium text-3xl"> VWO diploma</h1>
+                            <p class= "font-serif italic text-2xl"> Colegio Arubano - Oranjestad, Aruba</p>
+                            <div class="pt-3">
+                                <p class= "font-serif font-medium text-1xl"> Attained my high school diploma back in my home country of Aruba. These are following courses I choose to follow during the latter half of my high school period :
+                                    Dutch, English, Mathematics B, Mathematics D, Physics, Chemistry and Biology.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
         </div>
     </div>
     <div class="accordion-section">
         <label class="accordion-header text-center font-serif font-medium text-3xl" onclick="toggleAccordion('accordion-content-4')">Hobbies </label>
         <div id="accordion-content-4" class="accordion-content">
-            <p class= "ml-40 mr-40 font-medium font-serif text-1xl text-center"> My hobbies are primarily collecting vinyls or CD's, listening to them on my CD or record player and going to the concerts of my favorite artists.
-                I also enjoy going to the gym a lot and thus I go to the gym routinely as a means of consistently challenging myself physically.
+                <p class= "font-medium font-serif text-1xl text-center"> My hobbies are primarily collecting vinyls or CD's, listening to them on my CD or record player and going to the concerts of my favorite artists.
+                I also enjoy going to the gym a lot as a means of consistently challenging myself physically.
                 Lastly, I learning how to travel around the city with my longboard and currently I am trying to better my Spanish aswell.  </p>
-                <div class="pt-3 ..."></div>
-                <p class= "ml-40 mr-40 font-medium font-serif text-1xl text-center"> For those who are interested about my vinyl and CD collection, it can be found on my<a class= "underline font-serif text-lg link" href="https://www.discogs.com/user/lynwix/collection?sort=added&sort_order=asc"target="_blank">discog account.</a></p>
-                <div class="pt-3 ..."></div>
-                <p class= "ml-40 mr-40 font-medium font-serif text-1xl text-center"> Below are a few photos of some concerts that I went to!</p>
-            <div class="pt-10 ..."></div>
-            <div class="collage-container">
-                <!-- Image 1 -->
-                <img src="images/rosalia.jpg" alt="Image 1">
-            
-                <!-- Image 2 -->
-                <img src="images/21savage.jpg" alt="Image 2">
-            
-                <!-- Image 3 -->
-                <img src="images/pushat.jpg" alt="Image 3">
+                <div class="pt-3 ...">
+                    <p class= "font-medium font-serif text-1xl text-center"> For those who are interested about my vinyl and CD collection, it can be found on my <a class= "underline" href="https://www.discogs.com/user/lynwix/collection?sort=added&sort_order=asc"target="_blank">discog account.</a></p>
+                </div>
+                <div class="pt-3 ...">
+                    <p class= "font-medium font-serif text-1xl text-center"> Below are a few photos of some concerts that I went to!</p>
+                </div>
+            <div class="pt-10 ...">
+                <div class="collage-container">
+                    <!-- Image 1 -->
+                    <img src="images/rosalia.jpg" alt="Image 1">
+                
+                    <!-- Image 2 -->
+                    <img src="images/21savage.jpg" alt="Image 2">
+                
+                    <!-- Image 3 -->
+                    <img src="images/pushat.jpg" alt="Image 3">
 
-                <!-- Image 1 -->
-                <img src="images/mikedean.PNG" alt="Image 4">
+                    <!-- Image 1 -->
+                    <img src="images/mikedean.PNG" alt="Image 4">
 
-                <!-- Image 2 -->
-                <img src="images/joji.PNG" alt="Image 5">
-            
-                <!-- Image 3 -->
-                <img src="images/kflay.PNG" alt="Image 6">
-            
-                <!-- Add more images as needed -->
+                    <!-- Image 2 -->
+                    <img src="images/joji.PNG" alt="Image 5">
+                
+                    <!-- Image 3 -->
+                    <img src="images/kflay.PNG" alt="Image 6">
+                
+                    <!-- Add more images as needed -->
+                </div>
             </div>
         </div>
     </div>
-    <p class= "ml-40 mr-40 italic font-serif text-lg text-center"> Website made and realised by Lynrick Wix and Henk Janse.</p>
-    <div class="pb-10 ..."></div>
+    <div class="pb-10 ...">
+    <p class= "italic font-serif text-lg text-center"> Website made and realised by Lynrick Wix and Henk Janse.</p>
+    </div>
   
 </body>
 </html>
